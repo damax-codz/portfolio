@@ -12,6 +12,14 @@ export default function Document() {
         ></link>
         <title>Damilola Bhadmus - Artisan of the Digital Realm</title>
         <meta property="og:image" content="/apple-touch-icon.png" />
+        <meta
+          name="description"
+          content="Damilola Bhadmus | Frontend Web and mobile app developer."
+        />
+        <meta
+          name="keywords"
+          content="Damilola Bhadmus | Frontend Web and mobile app developer."
+        />
       </Head>
       <body>
         <Main />
