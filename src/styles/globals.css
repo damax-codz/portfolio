@@ -2,32 +2,118 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+html {
+  font-size: 0.7944444444vw;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.btn-99,
+.btn-99 *,
+.btn-99 :after,
+.btn-99 :before,
+.btn-99:after,
+.btn-99:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+.btn-99 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #000;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+}
+.btn-99:disabled {
+  cursor: default;
+}
+.btn-99:-moz-focusring {
+  outline: auto;
+}
+.btn-99 svg {
+  display: block;
+  vertical-align: middle;
+}
+.btn-99 [hidden] {
+  display: none;
+}
+.btn-99 {
+  --margin: 15%;
+  background: none;
+  -webkit-clip-path: polygon(
+    calc(var(--margin) * -1) 0,
+    calc(100% + var(--margin)) 0,
+    calc(100% + var(--margin)) 100%,
+    calc(var(--margin) * -1) 100%
+  );
+  clip-path: polygon(
+    calc(var(--margin) * -1) 0,
+    calc(100% + var(--margin)) 0,
+    calc(100% + var(--margin)) 100%,
+    calc(var(--margin) * -1) 100%
+  );
+  display: inline;
+  -webkit-mask-image: none;
+  position: relative;
+  transition: 0.2s;
+}
+.btn-99:hover {
+  transform: scale(1.1);
+}
+.btn-99:before {
+  background: #000000;
+  content: "";
+  height: 2px;
+  left: -100%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.2s;
+  width: calc(100% + var(--margin) * 2);
+}
+.btn-99:hover:before {
+  transform: translate(calc(100% - var(--margin) * 2), -50%);
+}
+
+.active:before {
+  transform: translate(calc(100% - var(--margin) * 2), -50%);
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+.body::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.body::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Invisible scrollbar thumb */
+}
+
+.body::-webkit-scrollbar-track {
+  background: transparent; /* Invisible scrollbar track */
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+[data-scroll-container] {
+  overflow: hidden;
+}
+
+[data-scroll-section] {
+  min-height: 100vh;
+  padding: 2rem;
 }
