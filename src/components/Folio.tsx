@@ -11,7 +11,7 @@ const Folio = () => {
         <a
           className="w-full md:w-[55%] cursor-pointer h-[70rem] md:h-[40rem] bg-[#333232] flex justify-center items-center"
           target="_blank"
-          href="https://edwindcreator.site"
+          href="https://edwindcreator.online"
         >
           <div
             style={{
