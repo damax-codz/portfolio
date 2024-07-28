@@ -1,3 +1,4 @@
+import Folio from "@/components/Folio";
 import React, { useEffect } from "react";
 
 const Index = () => {
@@ -18,6 +19,7 @@ const Index = () => {
           D<div className="rotate-180 inline-block">V</div>MS
         </div>
       </div>
+      <Folio />
     </div>
   );
 };
