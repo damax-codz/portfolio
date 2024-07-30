@@ -28,16 +28,15 @@ const Folio = () => {
           Art by Edwin
         </p>
       </div>
-
       <div className="w-full flex flex-col items-start md:items-end">
         <a
-          className="w-full md:w-[60%] cursor-pointer h-[70rem] md:h-[40rem] bg-[#e1e1fea6] flex justify-center items-center"
+          className="w-full md:w-[60%] cursor-pointer h-[70rem] md:h-[40rem] bg-[#DED0B6] flex justify-center items-center"
           target="_blank"
-          href="https://combyn.net"
+          href="https://www.majorgen.com/"
         >
           <div
             style={{
-              backgroundImage: "url(/combyn.png)",
+              backgroundImage: "url(/major.png)",
               backgroundSize: "contain",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
@@ -47,9 +46,10 @@ const Folio = () => {
           ></div>
         </a>
         <p className="text-[6rem]  md:text-[1.4rem] mt-[0.5rem] font-semibold tracking-wide uppercase ">
-          Combyn
+          Major Gen
         </p>
       </div>
+
       <div className="w-full flex flex-col items-start">
         <a
           className="w-full md:w-[55%] cursor-pointer h-[70rem] md:h-[40rem] bg-[#747264] flex justify-center items-center"
@@ -92,15 +92,15 @@ const Folio = () => {
           Deduro
         </p>
       </div>
-      <div className="w-full flex flex-col items-start">
+      <div className="w-full flex flex-col items-start ">
         <a
-          className="w-full md:w-[55%] cursor-pointer h-[70rem] md:h-[40rem] bg-[#DED0B6] flex justify-center items-center"
+          className="w-full md:w-[55%] cursor-pointer h-[70rem] md:h-[40rem] bg-[#e1e1fea6] flex justify-center items-center"
           target="_blank"
-          href="https://www.majorgen.com/"
+          href="https://combyn.net"
         >
           <div
             style={{
-              backgroundImage: "url(/major.png)",
+              backgroundImage: "url(/combyn.png)",
               backgroundSize: "contain",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
@@ -110,7 +110,7 @@ const Folio = () => {
           ></div>
         </a>
         <p className="text-[6rem]  md:text-[1.4rem] mt-[0.5rem] font-semibold tracking-wide uppercase ">
-          Major Gen
+          Combyn
         </p>
       </div>
     </div>
