@@ -2,9 +2,6 @@ import LocomotiveScroll from "locomotive-scroll";
 import React, { useEffect } from "react";
 
 const Folio = () => {
-  // useEffect(() => {
-  //   document.body.style.overflowY = "scroll";
-  // });
   return (
     <div className="mt-[10rem] md:mt-10 flex flex-col gap-[10rem] md:gap-[6rem]">
       <div className="w-full">
