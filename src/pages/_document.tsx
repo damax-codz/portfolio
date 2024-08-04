@@ -11,7 +11,6 @@ export default function Document() {
           rel="stylesheet"
         ></link>
         <title>Damilola Bhadmus - Artisan of the Digital Realm</title>
-        <meta property="og:image" content="/apple-touch-icon.png" />
         <meta
           name="description"
           content="Damilola Bhadmus | Frontend Web and mobile app developer."
