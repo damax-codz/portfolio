@@ -68,7 +68,7 @@ export default function Home() {
   return (
     <>
       <div className="bg-background h-full min-h-screen font-merriweather cursor-crosshair body">
-        <nav className="px-10 py-8 border-b-2 border-black flex flex-wrap gap-[10rem] md:gap-[5rem] sticky top-0 bg-white z-20">
+        <nav className="px-10 py-8 border-b-2 border-black flex flex-wrap gap-[10rem] md:gap-[5rem] relative lg:sticky top-0 bg-white z-20">
           <button
             className={`btn-99 !text-black text-[5rem] md:text-[1.5rem]  font-bold ${
               tab === "index" ? "active" : ""
