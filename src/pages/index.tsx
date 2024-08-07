@@ -21,41 +21,41 @@ export default function Home() {
     }).to(".intro", { display: "none" }, "<0.5");
   }, []);
 
-  useEffect(() => {
-    let scroll: LocomotiveScroll | undefined;
+  // useEffect(() => {
+  //   let scroll: LocomotiveScroll | undefined;
 
-    const initLocomotiveScroll = async () => {
-      if (window.innerWidth > 768) {
-        const locomotiveModule = await import("locomotive-scroll");
-        scroll = new locomotiveModule.default({
-          el: document.querySelector("[data-scroll-container]"),
-          smooth: true,
-          smoothMobile: false,
-          resetNativeScroll: true,
-          lenisOptions: {
-            wrapper: window,
-            content: document.documentElement,
-            lerp: 0,
-            duration: 1,
-            orientation: "vertical",
-            gestureOrientation: "vertical",
-            smoothWheel: true,
-            smoothTouch: true,
-            wheelMultiplier: 1,
-            touchMultiplier: 0.5,
-            normalizeWheel: true,
-            easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-          },
-        });
-      }
-    };
+  //   const initLocomotiveScroll = async () => {
+  //     // if (window.innerWidth > 768) {
+  //     const locomotiveModule = await import("locomotive-scroll");
+  //     scroll = new locomotiveModule.default({
+  //       el: document.querySelector("[data-scroll-container]"),
+  //       smooth: true,
+  //       smoothMobile: true,
+  //       resetNativeScroll: true,
+  //       lenisOptions: {
+  //         wrapper: window,
+  //         content: document.documentElement,
+  //         lerp: 0,
+  //         duration: 1,
+  //         orientation: "vertical",
+  //         gestureOrientation: "vertical",
+  //         smoothWheel: true,
+  //         smoothTouch: true,
+  //         wheelMultiplier: 1,
+  //         touchMultiplier: 0.5,
+  //         normalizeWheel: true,
+  //         easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  //       },
+  //     });
+  //     // }
+  //   };
 
-    initLocomotiveScroll();
+  //   initLocomotiveScroll();
 
-    return () => {
-      if (scroll) scroll.destroy();
-    };
-  }, []);
+  //   return () => {
+  //     if (scroll) scroll.destroy();
+  //   };
+  // }, []);
 
   const Navigate = () => {
     tl.from(".body", {
@@ -67,11 +67,8 @@ export default function Home() {
   };
   return (
     <>
-      <div
-        className="bg-background h-full min-h-screen font-merriweather cursor-crosshair body"
-        data-scroll-container
-      >
-        <nav className="px-10 py-8 border-b-2 border-black flex flex-wrap gap-[10rem] md:gap-[5rem]">
+      <div className="bg-background h-full min-h-screen font-merriweather cursor-crosshair body">
+        <nav className="px-10 py-8 border-b-2 border-black flex flex-wrap gap-[10rem] md:gap-[5rem] sticky top-0 bg-white z-20">
           <button
             className={`btn-99 !text-black text-[5rem] md:text-[1.5rem]  font-bold ${
               tab === "index" ? "active" : ""
@@ -117,7 +114,7 @@ export default function Home() {
             Let&apos;s talk
           </button>
         </nav>
-        <div className="px-10 h-full">
+        <div className="px-10 h-full" data-scroll-container>
           {tab === "index" ? (
             <Index />
           ) : tab === "chronicle" ? (
@@ -129,7 +126,7 @@ export default function Home() {
           ) : null}
         </div>
       </div>
-      <div className="overlay fixed w-screen h-screen bg-[#747264] top-0">
+      <div className="overlay fixed w-screen h-screen bg-[#747264] top-0 z-50">
         <div className="flex justify-center items-center h-full w-full font-merriweather">
           <p className="text-[5rem] md:text-[1.5rem] intro uppercase text-white tracking-wider">
             Bawo ni :{")"}

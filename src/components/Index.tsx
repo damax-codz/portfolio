@@ -2,9 +2,6 @@ import Folio from "@/components/Folio";
 import React, { useEffect } from "react";
 
 const Index = () => {
-  // useEffect(() => {
-  //   document.body.style.overflowY = "hidden";
-  // });
   return (
     <div className="w-full mt-10">
       <div className="max-w-full md:max-w-[55%] w-full py-[10rem] md:py-0">
