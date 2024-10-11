@@ -19,6 +19,7 @@ const config: Config = {
       },
       fontFamily: {
         merriweather: ["Merriweather", "sans-serif"],
+        grt: ["Schibsted Grotesk", "sans-serif"],
       },
     },
   },

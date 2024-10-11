@@ -4,9 +4,9 @@ import React from "react";
 
 const Chronicles = () => {
   return (
-    <div className="w-full mt-10">
+    <div className="w-full mt-5 px-10">
       <div className="max-w-full md:max-w-[55%] w-full">
-        <p className="text-[10rem] md:text-[3rem] tracking-wide py-[10rem] md:py-0">
+        <p className="text-[7rem] md:text-[3rem] font-grt  tracking-wide py-[10rem] md:py-0">
           Artisan of the Digital Realm:
           <br /> <b> Bhadmus Damilola</b>, a Frontend Web and Mobile App
           Developer, from the Heart of Lagos, Nigeria
@@ -16,7 +16,7 @@ const Chronicles = () => {
         My mantra
       </p>
       <div className="max-w-full md:max-w-[55%] w-full">
-        <p className="text-[10rem] md:text-[3rem] tracking-wide py-[10rem] md:py-0">
+        <p className="text-[7rem] md:text-[3rem] font-grt  tracking-wide py-[10rem] md:py-0">
           In three years of mastering the art of coding, I’ve learned that true
           confidence and skill come not from having written every line of code,
           but from the belief that I can.

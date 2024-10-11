@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Index from "@/components/Index";
 import gsap from "gsap";
 import Chronicles from "@/components/Chronicles";
@@ -11,6 +11,7 @@ import LocomotiveScroll from "locomotive-scroll";
 export default function Home() {
   const [tab, setTab] = useState("index");
   const tl = gsap.timeline();
+  const scrollRef = useRef(null);
 
   useEffect(() => {
     tl.to(".overlay", {
@@ -21,41 +22,39 @@ export default function Home() {
     }).to(".intro", { display: "none" }, "<0.5");
   }, []);
 
-  // useEffect(() => {
-  //   let scroll: LocomotiveScroll | undefined;
+  useEffect(() => {
+    let scroll: LocomotiveScroll | undefined;
 
-  //   const initLocomotiveScroll = async () => {
-  //     // if (window.innerWidth > 768) {
-  //     const locomotiveModule = await import("locomotive-scroll");
-  //     scroll = new locomotiveModule.default({
-  //       el: document.querySelector("[data-scroll-container]"),
-  //       smooth: true,
-  //       smoothMobile: true,
-  //       resetNativeScroll: true,
-  //       lenisOptions: {
-  //         wrapper: window,
-  //         content: document.documentElement,
-  //         lerp: 0,
-  //         duration: 1,
-  //         orientation: "vertical",
-  //         gestureOrientation: "vertical",
-  //         smoothWheel: true,
-  //         smoothTouch: true,
-  //         wheelMultiplier: 1,
-  //         touchMultiplier: 0.5,
-  //         normalizeWheel: true,
-  //         easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-  //       },
-  //     });
-  //     // }
-  //   };
+    const initLocomotiveScroll = async () => {
+      const locomotiveModule = await import("locomotive-scroll");
+      scroll = new locomotiveModule.default({
+        el: scrollRef.current,
+        smooth: true,
+        smoothMobile: true,
+        resetNativeScroll: true,
+        lenisOptions: {
+          wrapper: window,
+          content: document.documentElement,
+          lerp: 0,
+          duration: 1,
+          orientation: "vertical",
+          gestureOrientation: "vertical",
+          smoothWheel: true,
+          smoothTouch: true,
+          wheelMultiplier: 1,
+          touchMultiplier: 0.5,
+          normalizeWheel: true,
+          easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        },
+      });
+    };
 
-  //   initLocomotiveScroll();
+    initLocomotiveScroll();
 
-  //   return () => {
-  //     if (scroll) scroll.destroy();
-  //   };
-  // }, []);
+    return () => {
+      if (scroll) scroll.destroy();
+    };
+  }, []);
 
   const Navigate = () => {
     tl.from(".body", {
@@ -67,8 +66,8 @@ export default function Home() {
   };
   return (
     <>
-      <div className="bg-background h-full min-h-screen font-merriweather cursor-crosshair body">
-        <nav className="px-10 py-8 border-b-2 border-black flex flex-wrap gap-[10rem] md:gap-[5rem] relative lg:sticky top-0 bg-white z-20">
+      <div className="bg-background h-full  font-merriweather cursor-crosshair body">
+        <nav className="px-10 py-16 md:py-8 border-b-2 border-black flex flex-wrap gap-[7rem] md:gap-[5rem] relative lg:sticky top-0 bg-white z-20">
           <button
             className={`btn-99 !text-black text-[5rem] md:text-[1.5rem]  font-bold ${
               tab === "index" ? "active" : ""
@@ -114,7 +113,7 @@ export default function Home() {
             Let&apos;s talk
           </button>
         </nav>
-        <div className="px-10 h-full" data-scroll-container>
+        <div className="h-full" ref={scrollRef}>
           {tab === "index" ? (
             <Index />
           ) : tab === "chronicle" ? (
