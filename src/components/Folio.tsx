@@ -5,25 +5,25 @@ const Folio = () => {
   const folio = [
     {
       title: "Dezin: Digital Product and Brand Design Academy",
-      image: "/dezin.png",
+      image: "/dezin.webp",
       link: "https://dezinacademy.com/",
       year: "©web|2024",
     },
     {
       title: " Art by Edwin: Edwin Anthony portfolio site",
-      image: "/edwin.png",
+      image: "/edwin.webp",
       link: "https://edwindcreator.online",
       year: "©web|2024",
     },
     {
       title: "  Major Gen:AI powered resume creator platform",
-      image: "/major.png",
+      image: "/major.webp",
       link: "https://www.majorgen.com/",
       year: "©web|2024",
     },
     {
       title: "Deduro:fan site for adeduro tobiloba avt",
-      image: "/d.png",
+      image: "/d.webp",
       link: "https://deduro-avt.netlify.app/",
       year: "©web|2022",
     },
@@ -40,7 +40,7 @@ const Folio = () => {
             href={project.link}
             target="_blank"
             key={index}
-            className="flex flex-col md:flex-row py-10 md:py-5  box-content border-t-[1px] cursor-pointer group border-black items-start"
+            className="flex flex-col md:flex-row py-10 mb-[30px] md:mb-0 md:py-5  box-content border-t-[1px] cursor-pointer group border-black items-start"
           >
             <div
               className="overflow-hidden w-full md:w-[50%] mr-5"

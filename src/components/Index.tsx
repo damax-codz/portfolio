@@ -17,7 +17,7 @@ const Index = () => {
             </div>
           </div>
         </div>
-        <img src="/picasso.jpg" alt="picasso" className="w-full md:w-[40%]" />
+        <img src="/picasso.webp" alt="picasso" className="w-full md:w-[40%]" />
         <div className="flex md:hidden">
           <div className="text-[37rem] md:text-[20rem] tracking-wide font-black leading-[200px] md:leading-[15rem] mt-[10rem]">
             D<div className="rotate-180 inline-block">V</div>MS

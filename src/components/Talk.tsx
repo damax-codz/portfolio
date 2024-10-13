@@ -55,7 +55,7 @@ const Talk = () => {
           </a>
         </div>
         <img
-          src="/picasso.jpg"
+          src="/picasso.webp"
           alt="picasso"
           className="w-full md:w-[40%] mt-5"
         />
